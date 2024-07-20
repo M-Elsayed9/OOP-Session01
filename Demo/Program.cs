@@ -1,4 +1,5 @@
 ﻿using Common;
+using System.Security.Principal;
 
 namespace Demo
 {
@@ -158,6 +159,105 @@ namespace Demo
             
             obj.Z = 10; // valid because Z is public
             #endregion
+
+            #region Enum
+            #region Ex 01
+            //Days day = Days.Friday;
+
+            //Grades X = Grades.A;
+
+            //Console.WriteLine(day);
+            //Console.WriteLine(X);
+
+            //if (day == Days.Saturday)
+            //{
+            //    Console.WriteLine("Today is a holiday");
+            //}
+            //else
+            //{
+            //    Console.WriteLine("Today is a working day");
+            //}
+
+            //if (X == Grades.A)
+            //{
+            //    Console.WriteLine("Excellent");
+            //}
+            //else if (X == Grades.B)
+            //{
+            //    Console.WriteLine("Very Good");
+            //}
+            //else if (X == Grades.C)
+            //{
+            //    Console.WriteLine("Good");
+            //}
+            //else if (X == Grades.D)
+            //{
+            //    Console.WriteLine("Pass");
+            //}
+            //else
+            //{
+            //    Console.WriteLine("Fail");
+            //}
+
+            //Grades Y = 2; // invalid because 2 is not a valid value for Grades enum
+
+            //Grades Y = (Grades)2; // valid because we are casting 2 to Grades enum
+
+            //Grades Z = (Grades)10; // invalid because 10 is not a valid value for Grades enum
+            //Console.WriteLine(Z); // 10 
+            #endregion
+
+            #region Ex 02
+            //Console.WriteLine("Please Enter your Grade: ");
+
+            ////Grades X = (Grades) Enum.Parse(typeof(Grades), Console.ReadLine());
+            //// bad way 
+
+            //bool result = Enum.TryParse(typeof(Grades), Console.ReadLine(), out object X);
+            
+            //Console.WriteLine(X);
+            //Console.WriteLine(result);
+            #endregion
+            #endregion
+
         }
+    }
+
+    class Employee
+    {
+        string Name;
+        int Age;
+        double Salary;
+        Gender Gender; // Male - Female
+        Role Role = Role.Admin; // Admin - User - Guest
+    }
+
+    public enum Branches : byte
+    {
+        Dokki = 200, Giza, Maadi = 253, NasrCity, Heliopolis // SmartVillage invalid 
+    }
+
+    public enum Role : int
+    {
+        Admin = 20, Editor = 30, Viewer = 40
+    }
+    public enum Gender : int // default 
+    {
+        Male, Female
+    }
+
+    public enum Days : int
+    {
+        Saturday = 1,
+        Sunday = 2,
+        Monday, // 3
+        Tuesday, 
+        Wednesday, 
+        Friday
+    }
+
+    public enum Grades : int
+            {
+        A, B, C, D, F
     }
 }
