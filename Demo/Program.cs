@@ -3,11 +3,7 @@ using System.Security.Principal;
 
 namespace Demo
 {
-    // what can i write inside a namespace
-    // 1. class 
-    // 2. struct
-    // 3. Interface
-    // 4. Enum
+    
 
     // Access Modifiers Allowed inside Namespace
     // 1. internal (Default)
@@ -214,12 +210,40 @@ namespace Demo
             //// bad way 
 
             //bool result = Enum.TryParse(typeof(Grades), Console.ReadLine(), out object X);
-            
+
             //Console.WriteLine(X);
             //Console.WriteLine(result);
             #endregion
             #endregion
 
+            #region Struct
+            //Point P1;
+
+            // Decalre a variable from the type Point
+            // CLR will allocate 8 uninitialized bytes in the stack
+
+            // Console.Write(P1.X) // invalid because X is not initialized
+
+            //P1.X = 10;
+            //P1.Y = 20;
+
+            //Console.WriteLine(P1.X);
+            //Console.WriteLine(P1.Y);
+
+            // Point P2 = new Point(10, 20);
+            // CLR will allocate 8 bytes in the stack and initialize them with default constructor values
+            // New => is just only for constructor selection
+
+            //Console.WriteLine(P2.X);
+            //Console.WriteLine(P2.Y);
+            //Console.WriteLine(P2.ToString());
+
+            //Console.WriteLine(P1); // Boxing, unboxing
+
+            //Point P02 = new();
+
+
+            #endregion
         }
     }
 
